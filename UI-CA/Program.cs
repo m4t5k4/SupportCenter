@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Net.Http;
 using SC.BL;
 using SC.BL.Domain;
 using SC.UI.CA.ExtensionMethods;
@@ -13,6 +13,7 @@ namespace SC.UI.CA
         private static /*readonly*/ ITicketManager mgr = new TicketManager();
         private static readonly Service srv = new Service();
         private static RestClient rClient = new RestClient();
+        private static NamedRestClient _namedRestClient = new NamedRestClient();
 
         static void Main(string[] args)
         {
@@ -81,15 +82,8 @@ namespace SC.UI.CA
 
         private static void PrintAllTickets()
         {
-            /*
             foreach (var t in mgr.GetTickets())
                 Console.WriteLine(t.GetInfo());
-                
-                
-            */
-            rClient.EndPoint = "http://localhost:3000/tickets/";
-            string antwoord = rClient.GetRequest();
-            Console.Out.WriteLine(antwoord);
         }
 
         private static void ActionShowTicketDetails()

@@ -1,0 +1,6 @@
+30/07 version: 0.1.0
+base solution with live chat implemented.
+
+30/07 version 0.1.0
+IHttpClientFactory added through dependency injection.
+NamedRestClient created and method getAllTickets done.
