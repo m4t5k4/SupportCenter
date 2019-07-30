@@ -30,7 +30,7 @@ namespace SC.UI.CA
             Console.WriteLine("3) Toon de antwoorden van een ticket");
             Console.WriteLine("4) Maak een nieuw ticket");
             Console.WriteLine("5) Geef een antwoord op een ticket");
-            Console.WriteLine("0) Afsluiten");
+            Console.WriteLine("0) Afsluiten.");
             try
             {
                 DetectMenuAction();
