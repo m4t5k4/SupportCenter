@@ -1,0 +1,85 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "D:\\Documenten\\Onderzoekstopics\\SupportCenter-WebAPI\\SupportCenter-WebAPI\\UI-MVC\\UI-MVC.csproj",
+    "projectName": "SC.UI.Web.MVC",
+    "projectPath": "D:\\Documenten\\Onderzoekstopics\\SupportCenter-WebAPI\\SupportCenter-WebAPI\\UI-MVC\\UI-MVC.csproj",
+    "outputPath": "D:\\Documenten\\Onderzoekstopics\\SupportCenter-WebAPI\\SupportCenter-WebAPI\\UI-MVC\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.1"
+    ],
+    "frameworks": {
+      "netcoreapp2.1": {
+        "projectReferences": {
+          "D:\\Documenten\\Onderzoekstopics\\SupportCenter-WebAPI\\SupportCenter-WebAPI\\BL\\BL.csproj": {
+            "projectPath": "D:\\Documenten\\Onderzoekstopics\\SupportCenter-WebAPI\\SupportCenter-WebAPI\\BL\\BL.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.1": {
+      "dependencies": {
+        "Microsoft.AspNet.SignalR.Core": {
+          "target": "Package",
+          "version": "[2.4.0, )"
+        },
+        "Microsoft.AspNet.SignalR.JS": {
+          "target": "Package",
+          "version": "[2.4.0, )"
+        },
+        "Microsoft.AspNet.SignalR.SystemWeb": {
+          "target": "Package",
+          "version": "[2.4.0, )"
+        },
+        "Microsoft.AspNetCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.1.1, )",
+          "autoReferenced": true
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.1.0, )",
+          "autoReferenced": true
+        },
+        "Microsoft.Owin": {
+          "target": "Package",
+          "version": "[4.0.1, )"
+        },
+        "Microsoft.Owin.Host.SystemWeb": {
+          "target": "Package",
+          "version": "[4.0.1, )"
+        },
+        "Microsoft.Owin.Security": {
+          "target": "Package",
+          "version": "[4.0.1, )"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "[12.0.1, )"
+        },
+        "Owin": {
+          "target": "Package",
+          "version": "[1.0.0, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\bin\Debug\netstandard2.0\SC.DAL.deps.json
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\bin\Debug\netstandard2.0\SC.DAL.dll
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\bin\Debug\netstandard2.0\SC.DAL.pdb
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\bin\Debug\netstandard2.0\SC.BL.Domain.dll
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\bin\Debug\netstandard2.0\SC.BL.Domain.pdb
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\DAL.csproj.CopyComplete
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\SC.DAL.dll
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\DAL\obj\Debug\netstandard2.0\SC.DAL.pdb
