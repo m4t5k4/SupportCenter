@@ -84,6 +84,8 @@ namespace SC.UI.CA
             /*
             foreach (var t in mgr.GetTickets())
                 Console.WriteLine(t.GetInfo());
+                
+                
             */
             rClient.EndPoint = "http://localhost:3000/tickets/";
             string antwoord = rClient.GetRequest();
