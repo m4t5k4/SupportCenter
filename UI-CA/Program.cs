@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using SC.BL;
@@ -14,6 +15,7 @@ namespace SC.UI.CA
         private static readonly Service srv = new Service();
         private static RestClient rClient = new RestClient();
         private static NamedRestClient _namedRestClient = new NamedRestClient();
+        //private static readonly IHttpClientFactory _clientFactory;
 
         static void Main(string[] args)
         {
@@ -40,7 +42,7 @@ namespace SC.UI.CA
             {
                 Console.WriteLine();
                 Console.WriteLine("Er heeft zich een onverwachte fout voorgedaan!");
-                Console.WriteLine();
+                Console.WriteLine(e);
             }
         }
 
@@ -82,22 +84,36 @@ namespace SC.UI.CA
 
         private static void PrintAllTickets()
         {
+
+            /*via mgr
             foreach (var t in mgr.GetTickets())
+            {
                 Console.WriteLine(t.GetInfo());
+            }*/
+
+            //via rest
+            foreach (var ticket in _namedRestClient.GetAllTickets().Result)
+            {
+                Console.WriteLine(ticket.GetInfo());
+            }
         }
 
         private static void ActionShowTicketDetails()
         {
-            /*
+            
             Console.Write("Ticketnummer: ");
             int input = Int32.Parse(Console.ReadLine());
 
+            /*
             Ticket t = mgr.GetTicket(input);
-            PrintTicketDetails(t);
             */
-            rClient.EndPoint = "http://localhost:3000/tickets/";
-            string antwoord = rClient.GetRequest();
-            Console.Out.WriteLine(antwoord);
+            
+            //via rest
+            Ticket t = _namedRestClient.GetTicket(input).Result;
+            
+            PrintTicketDetails(t);
+
+
         }
 
         private static void PrintTicketDetails(Ticket ticket)
@@ -118,11 +134,17 @@ namespace SC.UI.CA
             Console.Write("Ticketnummer: ");
             int input = Int32.Parse(Console.ReadLine());
 
+            //via mgr
             //IEnumerable<TicketResponse> responses = mgr.GetTicketResponses(input);
             // via Web API-service
-            IEnumerable<TicketResponse> responses = srv.GetTicketResponses(input);
+            //IEnumerable<TicketResponse> responses = srv.GetTicketResponses(input);
+            //via rest
+            IEnumerable<TicketResponse> responses = _namedRestClient.GetTicketResponses(input).Result;
 
-            if (responses != null) PrintTicketResponses(responses);
+            if (responses != null)
+            {
+                PrintTicketResponses(responses);
+            }
         }
 
         private static void PrintTicketResponses(IEnumerable<TicketResponse> responses)
@@ -133,7 +155,7 @@ namespace SC.UI.CA
 
         private static void ActionCreateTicket()
         {
-            /*
+            
             int accountNumber = 0;
             string problem = "";
             string device = "";
@@ -151,42 +173,36 @@ namespace SC.UI.CA
             Console.Write("Probleem: ");
             problem = Console.ReadLine();
 
+            /*
             if (!isHardwareProblem)
                 mgr.AddTicket(accountNumber, problem);
             else
                 mgr.AddTicket(accountNumber, device, problem);
             */
-            int accountNumber = 0;
-            string problem = "";
-            string device = "unknown";
-           
-            Console.Write("Is het een hardware probleem (j/n)? ");
-            bool isHardwareProblem = (Console.ReadLine().ToLower() == "j");
-            if (isHardwareProblem)
+
+            if (!isHardwareProblem)
             {
-                Console.Write("Naam van het toestel: ");
-                device = Console.ReadLine();
+                _namedRestClient.PostHardwareTicket(accountNumber, device, problem);
             }
-
-            Console.Write("Gebruikersnummer: ");
-            accountNumber = Int32.Parse(Console.ReadLine());
-            Console.Write("Probleem: ");
-            problem = Console.ReadLine();
-
-            
-            rClient.PostRequest(accountNumber.ToString(), device, problem);
+            else
+            {
+                _namedRestClient.PostTicket(accountNumber, problem);
+            }
         }
 
-        private static void ActionAddResponseToTicket()
+        private static async void ActionAddResponseToTicket()
         {
             Console.Write("Ticketnummer: ");
             int ticketNumber = Int32.Parse(Console.ReadLine());
             Console.Write("Antwoord: ");
             string response = Console.ReadLine();
 
+            //via mgr
             //mgr.AddTicketResponse(ticketNumber, response, false);
             // via WebAPI-service
-            srv.AddTicketResponse(ticketNumber, response, false);
+            //srv.AddTicketResponse(ticketNumber, response, false);
+            //via rest
+            await _namedRestClient.PostTicketResponse(ticketNumber, response, false);
         }
     }
 }

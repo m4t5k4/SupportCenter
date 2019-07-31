@@ -15,7 +15,7 @@ namespace SC.UI.Web.MVC.Controllers.Api
         private ITicketManager mgr = new TicketManager();
 
         // GET: api/TicketResponses?ticketNumber=5
-        [HttpGet()]
+        [HttpGet]
         public IActionResult Get(int ticketNumber)
         {
             var responses = mgr.GetTicketResponses(ticketNumber);
@@ -26,7 +26,7 @@ namespace SC.UI.Web.MVC.Controllers.Api
             return Ok(responses);
         }
         
-        // POST: api/TicketResponse
+        // POST: api/TicketResponses
         [HttpPost]
         public IActionResult Post(NewTicketResponseDTO response)
         {

@@ -1,6 +1,34 @@
 30/07 version: 0.1.0
 base solution with live chat implemented.
 
-30/07 version 0.1.0
-IHttpClientFactory added through dependency injection.
-NamedRestClient created and method getAllTickets done.
+30/07 version 0.1.1
+IHttpClientFactory added to the startup through dependency injection.
+NamedRestClient class created and method getAllTickets done.
+
+31/07 version 0.1.2
+Controllers/Api/TicketsController following methods done and tested:
+    - GetAllTickets
+    - GetTicket
+    - PostTicket
+    
+NamedRestClient following methods done and tested:
+    - GetAllTickets
+    - GetTicket
+    - GetTicketResponses
+    - PostTicket
+    - PostHardwareTicket
+    - PostTicketResponse
+!no longer a NamedHttpClient & IHttpClientFactory!
+
+Program now uses the restclient for:
+    - PrintAllTickets
+    - ActionShowTicketDetails
+    - ActionShowResponses
+    - ActionAddResponseToTicket (now async method)
+    - ActionCreateTicket
+    
+DTO class created for:
+    - NewTicketDTO
+    - NewHardwareTicketDTO
+    - TicketDTO
+    - HardwareTicketDTO

@@ -66,7 +66,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("\n<h2>Tickets</h2>\n\n<p>");
             EndContext();
             BeginContext(99, 39, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e364da9f627e4bb180396ec2a1fc3bd9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d200072bd1a48a08f5feebf916d690c", async() => {
                 BeginContext(122, 12, true);
                 WriteLiteral("Nieuw ticket");
                 EndContext();
@@ -147,7 +147,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("</td>\n            <td>\n                ");
             EndContext();
             BeginContext(626, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ec92230d4a844cd918f0c649b2c775b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4cd042e477e64475a9b43420478dbcd9", async() => {
                 BeginContext(686, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -182,7 +182,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("\n                 | ");
             EndContext();
             BeginContext(717, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20adeb1de654426b8ac73682659ed5ae", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4979a59378fd4cea9c1041e9e5f54ee9", async() => {
                 BeginContext(774, 6, true);
                 WriteLiteral("Bewerk");
                 EndContext();
@@ -217,7 +217,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("\n                 | ");
             EndContext();
             BeginContext(804, 72, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dae717dc42f74361963a0faf1c398428", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8949c312c36e477a85d6c6e752adf64e", async() => {
                 BeginContext(863, 9, true);
                 WriteLiteral("Verwijder");
                 EndContext();

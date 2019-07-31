@@ -10,7 +10,7 @@ namespace SC.DAL.EF
     {
         public SupportCenterDbContext()
         {
-            SupportCenterDbInitializer.Initialize(this, dropCreateDatabase: true);
+            SupportCenterDbInitializer.Initialize(this, dropCreateDatabase: false);
         }
         
         public DbSet<Ticket> Tickets { get; set; }

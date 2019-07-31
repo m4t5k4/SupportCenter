@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using SC.UI.Web.MVC.Hubs;
 
 namespace SC.UI.Web.MVC
@@ -35,7 +36,9 @@ namespace SC.UI.Web.MVC
 
             services.AddMvc()
                 .AddXmlSerializerFormatters()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling
+                    = ReferenceLoopHandling.Ignore);
 
             services.AddSignalR();
             services.AddHttpClient("rest", c =>

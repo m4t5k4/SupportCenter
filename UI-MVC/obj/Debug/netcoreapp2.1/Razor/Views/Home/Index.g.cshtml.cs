@@ -74,7 +74,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("<div class=\"row\">\n    <div class=\"col-md-4\">\n        <h2>Nieuw ticket</h2>\n        <p>Maak een nieuw ticket aan in het systeem.</p>\n        ");
             EndContext();
             BeginContext(4994, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b52035019584e00b04c6267805d5b88", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59eda8e87b6e497cab9636467ebb703a", async() => {
                 BeginContext(5078, 12, true);
                 WriteLiteral("Nieuw ticket");
                 EndContext();
@@ -102,7 +102,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("\n    </div>\n    <div class=\"col-md-4\">\n        <h2>Alle tickets</h2>\n        <p>Toont een lijst van alle bestaande tickets.</p>\n        ");
             EndContext();
             BeginContext(5230, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "054fa152f8c8487db323680904beece0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d614a58b2a4b4ff88e5549d9122fdea1", async() => {
                 BeginContext(5313, 12, true);
                 WriteLiteral("Alle tickets");
                 EndContext();
@@ -133,7 +133,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("        ");
             EndContext();
             BeginContext(5517, 272, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47f989e16bdb4673b5a8f6b07d9fbd37", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf5e53b60aa4dcd86c3491e13613f1e", async() => {
                 BeginContext(5601, 181, true);
                 WriteLiteral("\n            <input name=\"id\" type=\"number\" placeholder=\"Ticketnummer\" class=\"form-control\"/>\n            <input type=\"submit\" value=\"Toon ticket\" class=\"btn btn-default\"/>\n        ");
                 EndContext();

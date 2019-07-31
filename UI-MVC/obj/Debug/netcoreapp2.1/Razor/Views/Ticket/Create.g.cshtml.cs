@@ -68,7 +68,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("\n<h2>Ticket aanmaken</h2>\n\n");
             EndContext();
             BeginContext(122, 560, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72cf12685a8e4f258d2123deb0ea0149", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99155c76206c49269490b9f2e448c443", async() => {
                 BeginContext(186, 454, true);
                 WriteLiteral(@"
     <div class=""form-group"">
@@ -82,7 +82,7 @@ using SC.UI.Web.MVC.Models;
     <input type=""submit"" value=""Verzenden""/> | ");
                 EndContext();
                 BeginContext(640, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b951fba132e14a18a7d8c92be64fc5a8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb713b1e03b848afb74cd56319d4c7a9", async() => {
                     BeginContext(662, 8, true);
                     WriteLiteral("Annuleer");
                     EndContext();
