@@ -132,3 +132,14 @@
         <p id="onopgelost">0</p>
     </div>
 </div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+    window.onload = getTotalTickets;
+    function getTotalTickets() {
+        $.ajax('/api/Tickets', {type: 'GET', dataType: 'json'})
+        .done(function(data) { document.getElementById('total').innerHTML = data.length})
+    }
+    </script>
+}

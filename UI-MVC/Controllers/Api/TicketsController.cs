@@ -60,8 +60,9 @@ namespace SC.UI.Web.MVC.Controllers.Api
             return CreatedAtAction("GetTicket", new {ticketNumber = responseData.TicketNumber});
         }
         
-        //POST: api/Tickets
+        //POST: api/Tickets/HardwareTicket
         [HttpPost]
+        [Route("HardwareTicket")]
         public IActionResult PostHardwareTicket(NewHardwareTicketDTO response)
         {
             HardwareTicket createdTicket =  (HardwareTicket) mgr.AddTicket(response.AccountId, response.DeviceName, response.Text);

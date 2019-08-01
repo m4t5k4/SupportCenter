@@ -70,7 +70,7 @@ using SC.UI.Web.MVC.Models;
             WriteLiteral("\n<h2>Ticket verwijderen</h2>\n<p>Ben je zeker dat je onderstaand ticket wenst te verwijderen? </p>\n\n");
             EndContext();
             BeginContext(437, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e95d2faffc2046aab58b95ecf67c17ec", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "89bea1ccffe1425a9e46690a5b90caf2", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -95,12 +95,12 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper.For = ModelExpressionProv
             WriteLiteral("\n\n");
             EndContext();
             BeginContext(491, 201, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c3b05be640745b6a1d211f692c3eaa8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dcfdef5af3554a62b630bc0eadbc8903", async() => {
                 BeginContext(600, 50, true);
                 WriteLiteral("\n    <input type=\"submit\" value=\"Verwijderen\"/> | ");
                 EndContext();
                 BeginContext(650, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d9ea42f348241ff9cafe404d4560fd4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b3f1886c4274ab0935a262fbeb08f3d", async() => {
                     BeginContext(672, 8, true);
                     WriteLiteral("Annuleer");
                     EndContext();

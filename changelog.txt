@@ -32,3 +32,9 @@ DTO class created for:
     - NewHardwareTicketDTO
     - TicketDTO
     - HardwareTicketDTO
+    
+01/08 version 0.1.3
+Started working on the dashboard/home:
+    - Totaal tickets done and tested
+    
+Started working on the general hub for website-wide notifications and dashboard updates
