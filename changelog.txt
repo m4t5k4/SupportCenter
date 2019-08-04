@@ -38,3 +38,8 @@ Started working on the dashboard/home:
     - Totaal tickets done and tested
     
 Started working on the general hub for website-wide notifications and dashboard updates
+
+4/08 version 0.1.4
+GeneralHub created with methods ServerSendUpdate and CountTickets.
+CountTickets method created in NamedRestClient.
+home.js created for the general hub.

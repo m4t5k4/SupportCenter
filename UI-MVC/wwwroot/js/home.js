@@ -1,15 +1,28 @@
 "use strict";
 
-var connection = new signalR.HubConnectionBuilder().withUrl("/homeHub").build();
+var connection = new signalR.HubConnectionBuilder().withUrl("/generalHub").build();
 
-//Disable send button until connection is established
 var tickets;
 var count;
 var total = document.getElementById("total").innerHTML;
 var opgelost = document.getElementById("opgelost").innerHTML;
 var onopgelost = document.getElementById("onopgelost").innerHTML;
 
-connection.on("ReceiveUpdate", function () {
+
+connection.start().then(function(){
+    connection.invoke("ServerSendUpdate")
+}).catch(function (err) {
+    return console.error(err.toString());
+});
+/*
+connection.invoke("ServerSendUpdate", function (data) {
+    total = data[0];
+    opgelost = data[1];
+    onopgelost = data[2];
+});*/
+
+/*
+connection.on("ClientReceiveUpdate", function (data) {
     $.ajax('/api/Tickets', {type: 'GET', dataType: 'json'})
         .done(function(data) { tickets = data});
     total = tickets.length;
@@ -21,8 +34,10 @@ connection.on("ReceiveUpdate", function () {
     })
     opgelost = count;
     onopgelost = total - count;
-});
+});*/
 
-document.getElementById("sendButton").addEventListener("click", function (event) {
-    connection.invoke("SendMessage", user, message)
-});
+connection.on("ClientReceiveUpdate", function (data) {
+    total = data[0];
+    opgelost = data[1];
+    onopgelost = data[2];
+})

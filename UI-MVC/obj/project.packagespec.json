@@ -20,6 +20,9 @@
         "projectReferences": {
           "D:\\Documenten\\Onderzoekstopics\\INF201-10_SignalR\\demo-solution\\SupportCenter-WebAPI\\BL\\BL.csproj": {
             "projectPath": "D:\\Documenten\\Onderzoekstopics\\INF201-10_SignalR\\demo-solution\\SupportCenter-WebAPI\\BL\\BL.csproj"
+          },
+          "D:\\Documenten\\Onderzoekstopics\\INF201-10_SignalR\\demo-solution\\SupportCenter-WebAPI\\UI-CA\\UI-CA.csproj": {
+            "projectPath": "D:\\Documenten\\Onderzoekstopics\\INF201-10_SignalR\\demo-solution\\SupportCenter-WebAPI\\UI-CA\\UI-CA.csproj"
           }
         }
       }

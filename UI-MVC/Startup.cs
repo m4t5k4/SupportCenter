@@ -65,7 +65,11 @@ namespace SC.UI.Web.MVC
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseSignalR(routes => { routes.MapHub<ChatHub>("/chatHub"); });
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chatHub");
+                routes.MapHub<GeneralHub>("/generalHub");
+            });
 
             app.UseMvc(routes =>
             {

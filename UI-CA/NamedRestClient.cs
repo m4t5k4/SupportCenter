@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -157,6 +158,40 @@ namespace SC.UI.CA
             }
 
             return tr;
+        }
+
+        public async Task<List<int>> CountTickets()
+        {
+            IEnumerable<Ticket> tickets;
+            List<int> list = null;
+            int count = 0;
+            var request = new HttpRequestMessage(HttpMethod.Get, 
+                baseUri + "Tickets");
+            var client = GetNewHttpClient();
+            var response = await client.SendAsync(request);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                string result = response.Content.ReadAsStringAsync().Result;
+                tickets = JsonConvert.DeserializeObject<IEnumerable<Ticket>>(result);
+            }
+            else
+            {
+                throw new Exception(response.StatusCode + " " + response.ReasonPhrase);
+            }
+            foreach (Ticket ticket in tickets)
+            {
+                if (ticket.State.Equals(TicketState.Closed))
+                {
+                    count++;
+                }
+            }
+
+            list[0] = tickets.Count();
+            list[1] = count;
+            list[2] = tickets.Count() - count;
+
+            return list;
         }
     }
     

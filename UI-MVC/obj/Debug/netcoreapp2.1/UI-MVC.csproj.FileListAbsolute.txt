@@ -1,3 +1,9 @@
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.csprojAssemblyReference.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.csproj.CoreCompileInputs.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.RazorAssemblyInfo.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.RazorAssemblyInfo.cs
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.AssemblyInfoInputs.cache
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.AssemblyInfo.cs
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.UI.Web.MVC.deps.json
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.UI.Web.MVC.runtimeconfig.json
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.UI.Web.MVC.runtimeconfig.dev.json
@@ -8,15 +14,11 @@ D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-Web
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.BL.dll
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.BL.Domain.dll
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.DAL.dll
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.UI.CA.dll
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.BL.pdb
+D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.UI.CA.pdb
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.BL.Domain.pdb
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\bin\Debug\netcoreapp2.1\SC.DAL.pdb
-D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.csprojAssemblyReference.cache
-D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.csproj.CoreCompileInputs.cache
-D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.RazorAssemblyInfo.cache
-D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.RazorAssemblyInfo.cs
-D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.AssemblyInfoInputs.cache
-D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.AssemblyInfo.cs
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\SC.UI.Web.MVC.TagHelpers.input.cache
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\SC.UI.Web.MVC.TagHelpers.output.cache
 D:\Documenten\Onderzoekstopics\INF201-10_SignalR\demo-solution\SupportCenter-WebAPI\UI-MVC\obj\Debug\netcoreapp2.1\UI-MVC.RazorCoreGenerate.cache
