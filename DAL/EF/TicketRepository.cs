@@ -1,6 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SC.BL.Domain;
 
 namespace SC.DAL.EF
@@ -46,6 +49,7 @@ namespace SC.DAL.EF
         public void DeleteTicket(int ticketNumber)
         {
             Ticket ticketToDelete = this.ReadTicket(ticketNumber);
+            if (ticketToDelete == null) return;
             ctx.Tickets.Remove(ticketToDelete);
             ctx.SaveChanges();
         }

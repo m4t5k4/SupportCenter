@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SC.DAL;
 using SC.BL.Domain;
+using SC.DAL.EF;
 
 namespace SC.BL
 {
@@ -115,7 +118,7 @@ namespace SC.BL
       else
         throw new ArgumentException("Ticketnumber '" + ticketNumber + "' not found!");
     }
-    
+
     #region validation-methods
     private void Validate(Ticket ticket)
     {

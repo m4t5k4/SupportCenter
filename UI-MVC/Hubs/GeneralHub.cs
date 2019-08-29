@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using SC.BL.Domain;
 using SC.UI.CA;
+using RestClient = SC.UI.CA.RestClient;
 
 namespace SC.UI.Web.MVC.Hubs
 {
@@ -12,13 +14,14 @@ namespace SC.UI.Web.MVC.Hubs
     {
         public async Task ServerSendUpdate()
         {
-            await Clients.All.SendAsync("ClientReceiveUpdate", CountTickets());
+            List<int> list = CountTickets();
+            await Clients.All.SendAsync("ClientReceiveUpdate", list);
         }
 
         private List<int> CountTickets()
         {
-            NamedRestClient _namedRestClient = new NamedRestClient();
-            return _namedRestClient.CountTickets().Result;
+            RestClient restClient = new RestClient();
+            return restClient.CountTickets().Result;
         }
     }
 }

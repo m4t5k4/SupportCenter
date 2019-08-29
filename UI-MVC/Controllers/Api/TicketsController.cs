@@ -1,4 +1,6 @@
+using System.Linq;
 using System.Net;
+using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Internal;
 using SC.BL;
@@ -19,7 +21,7 @@ namespace SC.UI.Web.MVC.Controllers.Api
         {
             var tickets = mgr.GetTickets();
             
-            if (tickets == null || !tickets.Any())
+            if (tickets == null || !EnumerableExtensions.Any(tickets))
                 return NoContent(); //of: StatusCode(StatusCodes.Status204NoContent);
 
             return Ok(tickets);
@@ -95,6 +97,42 @@ namespace SC.UI.Web.MVC.Controllers.Api
             ticket.State = TicketState.Closed;
             mgr.ChangeTicket(ticket);
             
+            return NoContent();
+        }
+        
+        //public IActionResult
+        [HttpPut("{id}")]
+        public IActionResult PutTicket(int id, [FromBody] TicketDTO data)
+        {
+            Ticket t = mgr.GetTicket(id);
+            t.AccountId = data.AccountId;
+            t.Text = data.Text;
+            mgr.ChangeTicket(t);
+            return Ok();
+
+        }
+        
+        [HttpPatch("{id}")]
+        public IActionResult PatchTicket(int id, [FromBody] TicketDTO data)
+        {
+            Ticket t = mgr.GetTicket(id);
+            if (!data.AccountId.Equals(0))
+            {
+                t.AccountId = data.AccountId;
+            }
+
+            if (!data.Text.IsNullOrEmpty())
+            {
+                t.Text = data.Text;
+            }
+            mgr.ChangeTicket(t);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteTicket(int id)
+        {
+            mgr.RemoveTicket(id);
             return NoContent();
         }
 

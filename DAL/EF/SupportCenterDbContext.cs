@@ -1,4 +1,9 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 //using Microsoft.EntityFrameworkCore.Proxies; // NuGet-package!
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Debug; // NuGet-package!
@@ -6,7 +11,7 @@ using SC.BL.Domain;
 
 namespace SC.DAL.EF
 {
-    internal class SupportCenterDbContext : DbContext
+    public class SupportCenterDbContext : DbContext
     {
         public SupportCenterDbContext()
         {

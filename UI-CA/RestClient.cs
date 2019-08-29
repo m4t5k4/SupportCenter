@@ -1,18 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Castle.Core.Internal;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using SC.BL.Domain;
 
 namespace SC.UI.CA
 {
-    public class NamedRestClient
+    public class RestClient
     {
-        //private readonly IHttpClientFactory _clientFactory;
         private const string baseUri = "https://localhost:5001/api/";
 
         private HttpClient GetNewHttpClient()
@@ -160,11 +162,53 @@ namespace SC.UI.CA
             return tr;
         }
 
+        public async Task PutTicket(int id, int accountId, string problem)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Put, baseUri + "Tickets/" + id);
+            var client = GetNewHttpClient();
+            object data = new {AccountId = accountId, Text = problem};
+            string dataAsJsonString = JsonConvert.SerializeObject(data);
+            request.Content = new StringContent(dataAsJsonString, System.Text.Encoding.UTF8, "application/json");
+            var response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+            }
+            else
+            {
+                throw new Exception(response.StatusCode + " " + response.ReasonPhrase);
+            }
+        }
+
+        public async Task PatchTicket(int id, int accountId, string problem)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Patch, baseUri + "Tickets/" + id);
+            var client = GetNewHttpClient();
+            object data = new {AccountId = accountId, Text = problem};
+            string dataAsJsonString = JsonConvert.SerializeObject(data);
+            request.Content = new StringContent(dataAsJsonString, System.Text.Encoding.UTF8, "application/json");
+            var response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+            }
+            else
+            {
+                throw new Exception(response.StatusCode + " " + response.ReasonPhrase);
+            }
+        }
+
+        public async Task DeleteTicket(int ticketNumber)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Delete,
+                baseUri + "Tickets/" + ticketNumber);
+            var client = GetNewHttpClient();
+            var response = await client.SendAsync(request);
+        }
+
         public async Task<List<int>> CountTickets()
         {
             IEnumerable<Ticket> tickets;
-            List<int> list = null;
-            int count = 0;
+            List<int> list = new List<int>();
+            int countClosed = 0;
             var request = new HttpRequestMessage(HttpMethod.Get, 
                 baseUri + "Tickets");
             var client = GetNewHttpClient();
@@ -183,13 +227,12 @@ namespace SC.UI.CA
             {
                 if (ticket.State.Equals(TicketState.Closed))
                 {
-                    count++;
+                    countClosed++;
                 }
             }
-
-            list[0] = tickets.Count();
-            list[1] = count;
-            list[2] = tickets.Count() - count;
+            list.Add(tickets.Count());
+            list.Add(countClosed);
+            list.Add(tickets.Count() -countClosed);
 
             return list;
         }

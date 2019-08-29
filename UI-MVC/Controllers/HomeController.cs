@@ -4,12 +4,19 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using SC.UI.Web.MVC.Hubs;
 using SC.UI.Web.MVC.Models;
 
 namespace SC.UI.Web.MVC.Controllers
 {
     public class HomeController : Controller
     {
+        private static IHubContext<GeneralHub> _hubContext;
+        public HomeController(IHubContext<GeneralHub> hubContext)
+        {
+            _hubContext = hubContext;
+        }
         public IActionResult Index()
         {
             return View();

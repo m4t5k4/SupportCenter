@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SC.BL.Domain;
+using SC.DAL.EF;
 
 namespace SC.DAL
 {
@@ -151,6 +154,7 @@ namespace SC.DAL
       responses.Add(response);
       return response;
     }
+
     #endregion
   }
 }

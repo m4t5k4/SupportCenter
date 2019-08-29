@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
-
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Data.Common;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SC.BL.Domain;
+using SC.DAL.EF;
 
 namespace SC.DAL
 {

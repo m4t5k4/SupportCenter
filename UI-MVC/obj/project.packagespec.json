@@ -42,6 +42,10 @@
           "version": "[2.1.1, )",
           "autoReferenced": true
         },
+        "Microsoft.AspNetCore.SignalR": {
+          "target": "Package",
+          "version": "[1.0.4, )"
+        },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",
           "target": "Package",

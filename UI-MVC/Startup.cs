@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -41,11 +43,6 @@ namespace SC.UI.Web.MVC
                     = ReferenceLoopHandling.Ignore);
 
             services.AddSignalR();
-            services.AddHttpClient("rest", c =>
-            {
-                c.BaseAddress = new Uri("https://localhost:5001/api/");
-                c.DefaultRequestHeaders.Add("Accept", "application/json");
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

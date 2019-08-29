@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using SC.BL;
 using SC.BL.Domain;
+using SC.DAL.EF;
 using SC.UI.CA.ExtensionMethods;
 
 namespace SC.UI.CA
@@ -13,9 +17,7 @@ namespace SC.UI.CA
         private static bool quit = false;
         private static /*readonly*/ ITicketManager mgr = new TicketManager();
         private static readonly Service srv = new Service();
-        private static RestClient rClient = new RestClient();
-        private static NamedRestClient _namedRestClient = new NamedRestClient();
-        //private static readonly IHttpClientFactory _clientFactory;
+        private static RestClient _restClient = new RestClient();
 
         static void Main(string[] args)
         {
@@ -25,6 +27,7 @@ namespace SC.UI.CA
 
         private static void ShowMenu()
         {
+            Console.WriteLine("");
             Console.WriteLine("=================================");
             Console.WriteLine("=== HELPDESK - SUPPORT CENTER ===");
             Console.WriteLine("=================================");
@@ -33,6 +36,9 @@ namespace SC.UI.CA
             Console.WriteLine("3) Toon de antwoorden van een ticket");
             Console.WriteLine("4) Maak een nieuw ticket");
             Console.WriteLine("5) Geef een antwoord op een ticket");
+            Console.WriteLine("6) Wijzig een ticket");
+            Console.WriteLine("7) wijzig deel van een ticket");
+            Console.WriteLine("8) Verwijder een ticket");
             Console.WriteLine("0) Afsluiten.");
             try
             {
@@ -70,6 +76,12 @@ namespace SC.UI.CA
                             ActionCreateTicket(); break;
                         case 5:
                             ActionAddResponseToTicket(); break;
+                        case 6:
+                            ActionPutTicket(); break;
+                        case 7:
+                            ActionPatchTicket(); break;
+                        case 8:
+                            ActionDeleteTicket(); break;
                         case 0:
                             quit = true;
                             return;
@@ -84,7 +96,7 @@ namespace SC.UI.CA
 
         private static void PrintAllTickets()
         {
-
+            Console.WriteLine();
             /*via mgr
             foreach (var t in mgr.GetTickets())
             {
@@ -92,7 +104,7 @@ namespace SC.UI.CA
             }*/
 
             //via rest
-            foreach (var ticket in _namedRestClient.GetAllTickets().Result)
+            foreach (var ticket in _restClient.GetAllTickets().Result)
             {
                 Console.WriteLine(ticket.GetInfo());
             }
@@ -109,7 +121,7 @@ namespace SC.UI.CA
             */
             
             //via rest
-            Ticket t = _namedRestClient.GetTicket(input).Result;
+            Ticket t = _restClient.GetTicket(input).Result;
             
             PrintTicketDetails(t);
 
@@ -139,7 +151,7 @@ namespace SC.UI.CA
             // via Web API-service
             //IEnumerable<TicketResponse> responses = srv.GetTicketResponses(input);
             //via rest
-            IEnumerable<TicketResponse> responses = _namedRestClient.GetTicketResponses(input).Result;
+            IEnumerable<TicketResponse> responses = _restClient.GetTicketResponses(input).Result;
 
             if (responses != null)
             {
@@ -153,7 +165,7 @@ namespace SC.UI.CA
                 Console.WriteLine(r.GetInfo());
         }
 
-        private static void ActionCreateTicket()
+        private static async void ActionCreateTicket()
         {
             
             int accountNumber = 0;
@@ -182,11 +194,11 @@ namespace SC.UI.CA
 
             if (!isHardwareProblem)
             {
-                _namedRestClient.PostHardwareTicket(accountNumber, device, problem);
+                await _restClient.PostHardwareTicket(accountNumber, device, problem);
             }
             else
             {
-                _namedRestClient.PostTicket(accountNumber, problem);
+                await _restClient.PostTicket(accountNumber, problem);
             }
         }
 
@@ -202,7 +214,37 @@ namespace SC.UI.CA
             // via WebAPI-service
             //srv.AddTicketResponse(ticketNumber, response, false);
             //via rest
-            await _namedRestClient.PostTicketResponse(ticketNumber, response, false);
+            await _restClient.PostTicketResponse(ticketNumber, response, false);
+        }
+
+        private static async void ActionPutTicket()
+        {
+            Console.Write("Ticketnummer: ");
+            int ticketNumber = Int32.Parse(Console.ReadLine());
+            Console.Write("Account id: ");
+            int accountNumber = Int32.Parse(Console.ReadLine());
+            Console.Write("Probleem: ");
+            string probleem = Console.ReadLine();
+            await _restClient.PutTicket(ticketNumber, accountNumber, probleem);
+        }
+
+        private static async void ActionPatchTicket()
+        {
+            Console.Write("Ticketnummer: ");
+            int ticketNumber = Int32.Parse(Console.ReadLine());
+            Console.Write("Account id (0 = ongewijzigd): ");
+            int accountNumber = Int32.Parse(Console.ReadLine());
+            Console.Write("Probleem (leeg = ongewijzigd): ");
+            string probleem = Console.ReadLine();
+            await _restClient.PatchTicket(ticketNumber, accountNumber, probleem);
+        }
+        
+        private static async void ActionDeleteTicket()
+        {
+            Console.Write("Ticketnummer: ");
+            int ticketNumber = Int32.Parse(Console.ReadLine());
+            await _restClient.DeleteTicket(ticketNumber);
+
         }
     }
 }
