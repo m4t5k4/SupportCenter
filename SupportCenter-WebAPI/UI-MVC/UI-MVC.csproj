@@ -18,7 +18,7 @@
         </PackageReference>
         <PackageReference Include="Microsoft.AspNetCore.App" />
         <PackageReference Include="Microsoft.Owin">
-          <Version>4.0.1</Version>
+          <Version>4.1.1</Version>
         </PackageReference>
         <PackageReference Include="Microsoft.Owin.Host.SystemWeb">
           <Version>4.0.1</Version>
